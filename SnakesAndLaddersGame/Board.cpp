@@ -9,7 +9,14 @@ void Board::checkSnakePlaces(){
 void Board::checkLadderPlaces(){
 }
 
-void Board::createPlaceNumbers(std::vector<std::string>& places, Player& player1, Player& player2) {
+void Board::checkPlayerVictory(Player& player) const{
+	if (player.getWon() == true)
+		std::cout << "Player Victory";
+}
+
+void Board::createPlaceNumbers(std::vector<std::string>& places) {
+	
+	places.clear();
 	for (int i{ 0 }; i < 100; i++) {
 		std::string number{};
 		if (i >= 9 && i < 99) {
@@ -30,12 +37,13 @@ void Board::updatePlaces(std::vector<std::string>& places, Player& player1, Play
 		if (i == player1.getPlace()) {
 			places.at(i) = "| X |";
 		}
-		if (i == player2.getPlace()) {
-			places.at(i) = "| O |";
+		/*
+		if (i+1 == player2.getPlace()) {
+			places.at(i) = "| V |";
 		}
-		if (i == player1.getPlace() && i == player2.getPlace()) {
+		if (i+1 == player1.getPlace() && i+1 == player2.getPlace()) {
 			places.at(i) = "|X/O|";
-		}
+		}*/
 	}
 }
 

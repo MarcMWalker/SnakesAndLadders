@@ -7,11 +7,13 @@
 
 class Player{
 private:
-	unsigned __int16 m_place;
+	__int16 m_place;
 	bool m_won;
 public:
 	Player();
-	unsigned __int16 getPlace()const;
+	__int16 getPlace()const;
+	bool getWon()const;
+	void checkWin(__int16 m_place);
 	void hasWon(bool& m_won);
 	void roll();
 	~Player();

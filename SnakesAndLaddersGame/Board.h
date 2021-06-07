@@ -16,7 +16,8 @@ public:
 	std::vector<std::string> m_boardPlaces;
 	void checkSnakePlaces();
 	void checkLadderPlaces();
-	void createPlaceNumbers(std::vector<std::string> &places, Player& player1,  Player& player2);
+	void checkPlayerVictory(Player& player)const;
+	void createPlaceNumbers(std::vector<std::string> &places);
 	void updatePlaces(std::vector<std::string>& places, Player& player1, Player& player2);
 	void printGrid(std::vector<std::string>& places);
 	~Board();
