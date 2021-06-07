@@ -37,13 +37,12 @@ void Board::updatePlaces(std::vector<std::string>& places, Player& player1, Play
 		if (i == player1.getPlace()) {
 			places.at(i) = "| X |";
 		}
-		/*
-		if (i+1 == player2.getPlace()) {
-			places.at(i) = "| V |";
+		if (i == player2.getPlace()) {
+			places.at(i) = "| O |";
 		}
-		if (i+1 == player1.getPlace() && i+1 == player2.getPlace()) {
+		if (i == player1.getPlace() && i == player2.getPlace()) {
 			places.at(i) = "|X/O|";
-		}*/
+		}
 	}
 }
 

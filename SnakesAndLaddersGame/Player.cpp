@@ -11,8 +11,8 @@ __int16 Player::getPlace() const{
 }
 
 void Player::checkWin(__int16 m_place){
-	if (m_place >= 99)
-		m_won = true;
+	if (Player::m_place >= 99)
+		Player::m_won = true;
 }
 
 void Player::roll() {
