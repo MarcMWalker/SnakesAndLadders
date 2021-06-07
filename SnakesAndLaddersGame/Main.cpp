@@ -1,6 +1,11 @@
 #include "Board.h"
 #include "Player.h"
+//#include <stdlib.h>
+//#include <time.h>
+//#include <chrono>
+//#include <thread>
 #include <iostream>
+#include <Windows.h>
 
 int main() {
 	Board board;
@@ -8,9 +13,9 @@ int main() {
 	board.updatePlaces(board.m_boardPlaces, board.player1, board.player2);
 	board.printGrid(board.m_boardPlaces);
 	board.createPlaceNumbers(board.m_boardPlaces);
-	int i{ 0 };
+
 		while (board.player1.getWon() != true || board.player2.getWon() != true) {
-			
+
 			board.createPlaceNumbers(board.m_boardPlaces);
 			board.player1.roll();
 			board.updatePlaces(board.m_boardPlaces, board.player1, board.player2);
@@ -20,6 +25,7 @@ int main() {
 			board.player1.checkWin(board.player1.getPlace());
 
 			if (board.player1.getWon() == true) {
+				std::cout << "WINNER!!!\n";
 				break;
 			}
 
@@ -32,9 +38,9 @@ int main() {
 			board.player2.checkWin(board.player2.getPlace());
 			
 			if (board.player2.getWon() == true) {
+				std::cout << "WINNER!!!\n";
 				break;
 			}
-			
 		}
 	return 0;
 }

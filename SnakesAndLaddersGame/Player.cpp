@@ -25,10 +25,10 @@ void Player::roll() {
 	case 'R':
 	case 'r':
 		randomNum = rand() % 6 + 1;
-		std::cout << randomNum;
+		std::cout << "\nPlayer rolled a: " << randomNum;
 		break;
 	default:
-		std::cout << "Invalid input";
+		std::cout << "\nInvalid input";
 		break;
 	}
 	Player::m_place = (m_place + randomNum);
