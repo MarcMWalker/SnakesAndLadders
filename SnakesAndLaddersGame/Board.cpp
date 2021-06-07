@@ -12,11 +12,27 @@ void Board::checkLadderPlaces(){
 }
 
 void Board::createPlaceNumbers(__int16 places[]) {
-	for (int i{ 0 }; i < 100; i++) {
-		places[i] = i + 1;
-		std::cout << places[i] << "\n";
+	std::cout << "--------------------------------------------------\n";
+	for (int i{ 100 }; i > 0; i--) {
+		if (i != 100) {
+			std::cout << "| ";
+		}else{ std::cout << "|"; }
+		places[i] = i;
+		if ((i % 10 == 0) && (i != 100)) {
+			std::cout << "\n--------------------------------------------------";
+			std::cout << "\n|";
+		}
+		if (i != 100 && i >= 10) {
+			std::cout << places[i] << " ";
+		}
+		else if (i >= 1 && i <= 9) {
+			std::cout << places[i] << "  ";
+		}
+		else { std::cout << places[i] << ""; }
 	}
+	std::cout << "|";
 }
 
 Board::~Board(){
 }
+
