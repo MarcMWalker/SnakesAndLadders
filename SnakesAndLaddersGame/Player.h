@@ -1,5 +1,9 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
 
 class Player{
 private:
@@ -9,6 +13,7 @@ public:
 	Player();
 	unsigned __int16 getPlace()const;
 	void hasWon(bool& m_won);
+	void roll();
 	~Player();
 };
 
