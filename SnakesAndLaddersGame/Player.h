@@ -1,15 +1,15 @@
-#ifndef SNAKE_H
-#define SNAKE_H
+#ifndef PLAYER_H
+#define PLAYER_H
 
-class Snake{
+class Player{
 private:
 	unsigned __int16 m_place;
 	bool m_won;
 public:
-	Snake();
+	Player();
 	unsigned __int16 getPlace()const;
 	void hasWon(bool& m_won);
-	~Snake();
+	~Player();
 };
 
 #endif
