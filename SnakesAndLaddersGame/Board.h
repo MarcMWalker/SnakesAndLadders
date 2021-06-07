@@ -1,6 +1,9 @@
 #ifndef BOARD_H
 #define BOARD_H
 #include <iostream>
+#include <string>
+#include <cstring>
+#include <vector>
 #include "Player.h"
 class Board{
 private:
@@ -10,11 +13,11 @@ public:
 	Board();
 	Player player1;
 	Player player2;
-	__int16 m_boardPlaces[101];
-	std::string board[101];
+	std::vector<std::string> m_boardPlaces;
 	void checkSnakePlaces();
 	void checkLadderPlaces();
-	void createPlaceNumbers(__int16 places[]);
+	void createPlaceNumbers(std::vector<std::string> &places);
+	void printGrid(std::vector<std::string>& places);
 	~Board();
 };
 #endif

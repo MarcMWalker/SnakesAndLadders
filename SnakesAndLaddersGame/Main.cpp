@@ -5,5 +5,6 @@
 int main() {
 	Board board;
 	board.createPlaceNumbers(board.m_boardPlaces);
+	board.printGrid(board.m_boardPlaces);
 	return 0;
 }
