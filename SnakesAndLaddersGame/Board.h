@@ -5,6 +5,8 @@
 #include <cstring>
 #include <vector>
 #include "Player.h"
+#include <Windows.h>
+
 class Board{
 private:
 	std::vector<__int16> m_snakeLocations;
@@ -20,6 +22,8 @@ public:
 	void createPlaceNumbers(std::vector<std::string> &places);
 	void updatePlaces(std::vector<std::string>& places, Player& player1, Player& player2);
 	void printGrid(std::vector<std::string>& places);
+	void printSnakeLocations()const;
+	void printLadderLocations()const;
 	~Board();
 };
 #endif

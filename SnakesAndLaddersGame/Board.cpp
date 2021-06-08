@@ -1,26 +1,42 @@
 #include "Board.h"
 
-Board::Board() :m_snakeLocations{ 32,36,48,62,88,95,97 }, m_ladderLocations{ 1,4,8,21,28,50,71,80 }, m_boardPlaces{ } {
+Board::Board() :m_snakeLocations{ 32,36,48,62,88,95,97 }, m_ladderLocations{ 2,4,8,21,29,50,71,80 }, m_boardPlaces{ } {
 }
 
 void Board::checkSnakePlaces(Player& player) {
 	if (player.getPlace()+1 == 32)
-		player.setPlace(player, 22);
+		player.setSnakePlace(player, 22);
 	if (player.getPlace()+1 == 36)
-		player.setPlace(player, 30);
+		player.setSnakePlace(player, 30);
 	if (player.getPlace()+1 == 48)
-		player.setPlace(player, 22);
+		player.setSnakePlace(player, 22);
 	if (player.getPlace()+1 == 62)
-		player.setPlace(player, 44);
+		player.setSnakePlace(player, 44);
 	if (player.getPlace()+1 == 88)
-		player.setPlace(player, 64);
+		player.setSnakePlace(player, 64);
 	if (player.getPlace()+1 == 95)
-		player.setPlace(player, 39);
+		player.setSnakePlace(player, 39);
 	if (player.getPlace()+1 == 97)
-		player.setPlace(player, 19);
+		player.setSnakePlace(player, 19);
 }
 
 void Board::checkLadderPlaces(Player& player){
+	if (player.getPlace() + 1 == 2)
+		player.setLadderPlace(player, 26);
+	if (player.getPlace() + 1 == 4)
+		player.setLadderPlace(player, 10);
+	if (player.getPlace() + 1 == 8)
+		player.setLadderPlace(player, 22);
+	if (player.getPlace() + 1 == 21)
+		player.setLadderPlace(player, 21);
+	if (player.getPlace() + 1 == 29)
+		player.setLadderPlace(player, 48);
+	if (player.getPlace() + 1 == 50)
+		player.setLadderPlace(player, 17);
+	if (player.getPlace() + 1 == 71)
+		player.setLadderPlace(player, 21);
+	if (player.getPlace() + 1 == 80)
+		player.setLadderPlace(player, 19);
 }
 
 void Board::checkPlayerVictory(Player& player) const{
@@ -29,7 +45,6 @@ void Board::checkPlayerVictory(Player& player) const{
 }
 
 void Board::createPlaceNumbers(std::vector<std::string>& places) {
-	
 	places.clear();
 	for (int i{ 0 }; i < 100; i++) {
 		std::string number{};
@@ -68,6 +83,21 @@ void Board::printGrid(std::vector<std::string>& places){
 	std::cout << "\n--------------------------------------------------\n";
 }
 
-Board::~Board(){
+void Board::printSnakeLocations() const{
+	std::cout << "Snake locations: ( ";
+	for (auto i : m_snakeLocations) {
+		std::cout << i << " ";
+	}
+	std::cout << ")\n";
 }
 
+void Board::printLadderLocations() const{
+	std::cout << "Ladder locations: ( ";
+	for (auto i : m_ladderLocations) {
+		std::cout << i << " ";
+	}
+	std::cout << ")\n";
+}
+
+Board::~Board(){
+}

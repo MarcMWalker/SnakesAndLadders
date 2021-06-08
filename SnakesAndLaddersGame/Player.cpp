@@ -3,15 +3,16 @@
 Player::Player() : m_place{ 0 }, m_won{false} {
 }
 
-Player::~Player(){
-}
-
 __int16 Player::getPlace() const{
 	return m_place;
 }
 
-void Player::setPlace(Player& player, __int16 num){
+void Player::setSnakePlace(Player& player, __int16 num){
 	player.m_place -= num;
+}
+
+void Player::setLadderPlace(Player& player, __int16 num){
+	player.m_place += num;
 }
 
 void Player::checkWin(__int16 m_place){
@@ -29,6 +30,7 @@ void Player::roll() {
 	case 'R':
 	case 'r':
 		randomNum = rand() % 6 + 1;
+		Sleep(3000);
 		std::cout << "\nPlayer rolled a: " << randomNum;
 		break;
 	default:
@@ -40,4 +42,7 @@ void Player::roll() {
 
 bool Player::getWon()const{
 	return m_won;
+}
+
+Player::~Player() {
 }
