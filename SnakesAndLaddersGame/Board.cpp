@@ -1,12 +1,26 @@
 #include "Board.h"
 
-Board::Board() :m_snakeLocations{ 32,34,48,62,88,95,97 }, m_ladderLocations{ 1,4,8,21,28,50,71,80 }, m_boardPlaces{ } {
+Board::Board() :m_snakeLocations{ 32,36,48,62,88,95,97 }, m_ladderLocations{ 1,4,8,21,28,50,71,80 }, m_boardPlaces{ } {
 }
 
-void Board::checkSnakePlaces(){
+void Board::checkSnakePlaces(Player& player) {
+	if (player.getPlace()+1 == 32)
+		player.setPlace(player, 22);
+	if (player.getPlace()+1 == 36)
+		player.setPlace(player, 30);
+	if (player.getPlace()+1 == 48)
+		player.setPlace(player, 22);
+	if (player.getPlace()+1 == 62)
+		player.setPlace(player, 44);
+	if (player.getPlace()+1 == 88)
+		player.setPlace(player, 64);
+	if (player.getPlace()+1 == 95)
+		player.setPlace(player, 39);
+	if (player.getPlace()+1 == 97)
+		player.setPlace(player, 19);
 }
 
-void Board::checkLadderPlaces(){
+void Board::checkLadderPlaces(Player& player){
 }
 
 void Board::checkPlayerVictory(Player& player) const{

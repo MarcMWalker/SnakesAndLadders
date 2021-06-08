@@ -18,6 +18,7 @@ int main() {
 
 			board.createPlaceNumbers(board.m_boardPlaces);
 			board.player1.roll();
+			board.checkSnakePlaces(board.player1);
 			board.updatePlaces(board.m_boardPlaces, board.player1, board.player2);
 			board.printGrid(board.m_boardPlaces);
 			std::cout << "Player 1: #" << (board.player1.getPlace() + 1) << "\n";
@@ -28,7 +29,7 @@ int main() {
 				std::cout << "WINNER!!!\n";
 				break;
 			}
-
+			/*
 			board.createPlaceNumbers(board.m_boardPlaces);
 			board.player2.roll();
 			board.updatePlaces(board.m_boardPlaces, board.player1, board.player2);
@@ -40,7 +41,7 @@ int main() {
 			if (board.player2.getWon() == true) {
 				std::cout << "WINNER!!!\n";
 				break;
-			}
+			}*/
 		}
 	return 0;
 }

@@ -10,6 +10,10 @@ __int16 Player::getPlace() const{
 	return m_place;
 }
 
+void Player::setPlace(Player& player, __int16 num){
+	player.m_place -= num;
+}
+
 void Player::checkWin(__int16 m_place){
 	if (Player::m_place >= 99)
 		Player::m_won = true;

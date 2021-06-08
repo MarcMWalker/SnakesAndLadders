@@ -12,6 +12,7 @@ private:
 public:
 	Player();
 	__int16 getPlace()const;
+	void setPlace(Player& player, __int16 num);
 	bool getWon()const;
 	void checkWin(__int16 m_place);
 	void roll();
